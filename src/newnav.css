@@ -1,0 +1,133 @@
+/* styles.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #08223c;
+  color: white;
+  padding: 16px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly; /* or space-between, depending on layout */
+  gap: 20px; /* add spacing between items */
+}
+
+
+.logo {
+  color: #48bb78;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #48bb78;
+}
+
+.profile-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #48bb78;
+  color: #08223c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+
+.profile-circle:hover {
+  transform: scale(1.05);
+}
+
+/* Search Section Container */
+.search-section {
+  background: linear-gradient(135deg, #f3f6fb, #e8edf5);
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Wrapper for max width */
+.search-wrapper {
+  max-width: 720px;
+  width: 100%;
+  position: relative;
+}
+
+/* Search Input Field */
+.search-input {
+  width: 100%;
+  padding: 18px 56px 18px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+/* Placeholder */
+.search-input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* Focus State */
+.search-input:focus {
+  background: white;
+  box-shadow: 0 0 0 4px rgba(72, 187, 120, 0.3);
+  border: 1px solid #48bb78;
+}
+
+/* Optional: Add a search icon */
+.search-wrapper::before {
+  content: '🔍';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #a0aec0;
+  pointer-events: none;
+}
+

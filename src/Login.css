@@ -1,0 +1,117 @@
+/* Login.css */
+.login-body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/6e8a111a-8d67-4876-bb2e-80c93c4f7153.png')
+    center center / cover no-repeat fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000cc;
+  backdrop-filter: brightness(0.6);
+}
+
+.container {
+  background: rgba(18, 27, 32, 0.85);
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  width: 360px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
+  color: #14ffe8;
+  border: 2px solid #138c82;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #0fffc2;
+  text-shadow: 0 0 6px #10c9a9;
+}
+
+input[type='text'],
+input[type='password'] {
+  width: 250px;
+  padding: 0.85rem;
+  margin-bottom: 1.2rem;
+  border-radius: 0.85rem;
+  border: 1.6px solid #138c82;
+  background: #0c1a1a;
+  color: #b9fff8;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: border-color 0.25s ease;
+  outline: none;
+}
+
+input[type='text']:focus,
+input[type='password']:focus {
+  border-color: #14ffe8;
+  box-shadow: 0 0 12px #14ffe8a3;
+  background: #052222;
+}
+
+button {
+  width: 250px;
+  background: linear-gradient(90deg, #14ffe8, #138c82);
+  padding: 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 1.1rem;
+  cursor: pointer;
+  color: #000d08;
+  letter-spacing: 0.12em;
+  transition: background 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 0 15px #17d2b2bb;
+}
+
+button:hover {
+  background: linear-gradient(270deg, #14ffe8, #138c82);
+  transform: scale(1.03);
+  box-shadow: 0 0 20px #12ffdbcc;
+  color: #001b10;
+}
+
+p {
+  margin-top: 1.3rem;
+  font-size: 0.93rem;
+  font-weight: 500;
+  color: #10c5a2;
+}
+
+a {
+  color: #10fff1;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.26s ease;
+}
+
+a:hover {
+  color: #12ffea;
+  text-decoration: underline;
+}
+
+@media (max-width: 420px) {
+  .container {
+    width: 90vw;
+    padding: 2rem 1.3rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  input[type='text'],
+  input[type='password'] {
+    font-size: 1rem;
+    padding: 0.7rem;
+  }
+
+  button {
+    font-size: 1.05rem;
+    padding: 0.86rem 0;
+  }
+}
