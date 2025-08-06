@@ -1,6 +1,19 @@
-
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function NNav() {
+  const navigate = useNavigate();
+  const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+
+  const handleLogout = () => {
+    localStorage.removeItem('loggedIn');
+    navigate('/login');
+  };
+
+  const handleLogin = () => {
+    navigate('/login');
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -12,7 +25,17 @@ function NNav() {
           <a href="#">Analytics</a>
         </div>
 
-        <div className="profile-circle">S</div>
+        {/* Right-side auth section */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          {isLoggedIn ? (
+            <>
+              <div className="profile-circle">S</div>
+              <button className="auth-button" onClick={handleLogout}>Logout</button>
+            </>
+          ) : (
+            <button className="auth-button" onClick={handleLogin}>Login</button>
+          )}
+        </div>
       </div>
     </nav>
   );

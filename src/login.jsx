@@ -15,8 +15,9 @@ const Login = () => {
 
     if (matched) {
       localStorage.setItem('loggedIn', 'true');
-      localStorage.setItem('username', username);
       navigate('/home');
+      localStorage.setItem('username', username);
+      
     } else {
       alert('Invalid credentials!');
     }
