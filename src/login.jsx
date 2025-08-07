@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './Login.css';
 
-const Login = () => {
+const Login = ({ setIsLoggedIn }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -15,9 +15,9 @@ const Login = () => {
 
     if (matched) {
       localStorage.setItem('loggedIn', 'true');
-      navigate('/home');
       localStorage.setItem('username', username);
-      
+      setIsLoggedIn(true); // ✅ this auto-updates App.js and reloads the view
+      navigate('/home');
     } else {
       alert('Invalid credentials!');
     }

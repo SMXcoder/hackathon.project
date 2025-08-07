@@ -1,17 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function NNav() {
   const navigate = useNavigate();
-  const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('loggedIn') === 'true');
+
+  // Watch for login status change and update state
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const storedStatus = localStorage.getItem('loggedIn') === 'true';
+      setIsLoggedIn(storedStatus);
+    }, 500); // check every 500ms
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem('loggedIn');
+    localStorage.removeItem('username');
+    setIsLoggedIn(false);
     navigate('/login');
   };
 
   const handleLogin = () => {
     navigate('/login');
+  };
+
+  const handleAnalysisClick = () => {
+    navigate('/analysis');
   };
 
   return (
@@ -22,10 +38,9 @@ function NNav() {
         <div className="nav-links">
           <a href="#">Home</a>
           <a href="#">Live Stocks</a>
-          <a href="#">Analytics</a>
+          <a onClick={handleAnalysisClick} style={{ cursor: 'pointer' }}>Analytics</a>
         </div>
 
-        {/* Right-side auth section */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           {isLoggedIn ? (
             <>

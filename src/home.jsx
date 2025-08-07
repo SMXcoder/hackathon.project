@@ -6,10 +6,10 @@ import Foot from './footer.jsx';
 import './newnav.css';
 import './Foot.css';
 
-function Home() {
+function Home({ setIsLoggedIn }) {
   return (
     <div className="background">
-      <NNav />
+      <NNav setIsLoggedIn={setIsLoggedIn} />
       <SearchBar />
       <Foot />
     </div>

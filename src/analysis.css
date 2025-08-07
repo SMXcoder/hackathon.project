@@ -1,0 +1,130 @@
+
+  body, #root {
+    background: #0c0f1a;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0f7ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .background-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      linear-gradient(120deg, rgba(10, 18, 30, 0.85), rgba(14, 10, 30, 0.85)),
+      url('https://svgshare.com/i/16QZ.svg') no-repeat top left,
+      url('https://svgshare.com/i/16RG.svg') no-repeat bottom right;
+    background-size: 320px 200px, 300px 180px, 280px 180px;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 36px 24px 60px;
+    position: relative;
+    z-index: 1;
+  }
+
+  h1 {
+    font-weight: 900;
+    font-size: 2.75rem;
+    margin-bottom: 40px;
+    color: #00e6e6;
+    text-shadow: 0 0 12px #00ffffcc, 0 0 22px #00b3b362;
+    user-select: none;
+  }
+
+  form.search-bar {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 40, 60, 0.75);
+    border-radius: 28px;
+    border: 2px solid #00ffee99;
+    box-shadow: 0 0 20px #00ffe088;
+    padding: 6px 20px;
+    display: flex;
+    width: 320px;
+    z-index: 10;
+    user-select: none;
+    backdrop-filter: blur(6px);
+  }
+
+  form.search-bar input {
+    flex-grow: 1;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border: none;
+    background: transparent;
+    color: #c9f6ff;
+    border-radius: 24px;
+    outline: none;
+  }
+
+  form.search-bar input::placeholder {
+    color: #88ffffaa;
+  }
+
+  form.search-bar button {
+    display: none;
+  }
+
+  .suggestions {
+    position: fixed;
+    top: 56px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    background: rgba(0, 40, 60, 0.92);
+    border: 2px solid #00ffccaa;
+    border-top: none;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 0 20px #00ffcc;
+    max-height: 160px;
+    overflow-y: auto;
+    color: #b0fff7;
+    font-weight: 600;
+    z-index: 10;
+    user-select: none;
+  }
+
+  .suggestion {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #00ffcc55;
+    transition: background 0.3s ease;
+  }
+
+  .suggestion:last-child {
+    border-bottom: none;
+  }
+
+  .suggestion:hover,
+  .suggestion:focus {
+    background: #00ffee33;
+    color: #003840;
+    outline: none;
+  }
+
+  @media (max-width: 540px) {
+    form.search-bar {
+      width: 90vw;
+      max-width: none;
+    }
+    .suggestions {
+      width: 90vw;
+      max-width: none;
+    }
+    .container {
+      padding: 32px 16px 48px;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+  }
