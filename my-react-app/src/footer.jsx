@@ -1,3 +1,4 @@
+
 function Foot(){
     return(
   <div className="p1">
@@ -16,22 +17,34 @@ function Foot(){
       </div>
       <div class="footer-section">
         <h3>Contact Us</h3>
-        <p>Email: support@stocktracker.ai</p>
-        <p>Phone: +91 98765 43210</p>
+        <p><a href="https://mail.google.com/mail/u/0/#inbox">Email: support@stocktracker.ai</a></p>
+        <p id="phone">Phone: +91 8793052278</p>
       </div>
-      <div class="footer-section">
+      <div class="footer-section">    
         <h3>Follow Us</h3>
         <div class="socials">
-          <a href="#">🌐</a>
+          <a href="https://economictimes.indiatimes.com/markets/stocks?from=mdr">🌐</a>
           <a href="#">🐦</a>
-          <a href="#">📘</a>
+          <a href="https://github.com/SMXcoder/hackathon.project" target="_blank" rel="noopener noreferrer"> <img 
+    src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
+    alt="GitHub" 
+    style={{
+      width: '24px',
+      height: '24px',
+      objectFit: 'contain',
+      display: 'inline-block',
+      verticalAlign: 'middle',
+      background: 'transparent',
+      borderRadius: '50%'
+    }} 
+  /></a>
           <a href="#">📸</a>
         </div>
       </div>
     </div>
 
     <div class="footer-bottom">
-      &copy; 2025 StockTracker | Made with 💻 by Team HackFlare 🚀
+      &copy; 2025 StockTracker | Made with 💻 by Syntax Squad 🚀
     </div>
   </footer>
   </div>

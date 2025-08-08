@@ -1,0 +1,219 @@
+.home-page-wrapper {
+  background: #0d1117;
+  color: #c9d1d9;
+  padding: 20px 40px;
+}
+
+.green {
+  color: #2ea043;
+}
+.red {
+  color: #f85149;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #30363d;
+  padding-bottom: 20px;
+}
+
+.indices-box h2 {
+  color: #2ea043;
+  margin-bottom: 8px;
+}
+.indices-box ul {
+  list-style: none;
+  padding: 0;
+}
+.indices-box li {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+.status-box {
+  background-color: #161b22;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #30363d;
+}
+
+/* Search Section */
+.search-section {
+  margin-top: 20px;
+  text-align: center;
+}
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.search-bar input {
+  padding: 8px 12px;
+  border: 2px solid #238636;
+  border-radius: 20px;
+  background: #161b22;
+  color: #c9d1d9;
+}
+.search-bar button {
+  background: #238636;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  color: #0d1117;
+  font-weight: bold;
+}
+.suggestions {
+  margin-top: 8px;
+  list-style: none;
+  padding: 0;
+}
+
+/* Trending Stocks */
+.trending-section {
+  margin-top: 30px;
+}
+.trending-section h2 {
+  color: #2ea043;
+}
+.trending-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.stock-card {
+  background: #161b22;
+  border-radius: 12px;
+  padding: 12px;
+  width: 200px;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.price-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: bold;
+}
+.metrics {
+  font-size: 12px;
+  color: #8b949e;
+  margin-top: 6px;
+}
+
+/* Watchlist */
+.watchlist-section {
+  margin-top: 30px;
+}
+.watchlist-section h2 {
+  color: #2ea043;
+}
+.watchlist-section ul {
+  list-style: none;
+  padding: 0;
+}
+.watchlist-section li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #161b22;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+.watchlist-section button {
+  border: none;
+  background: transparent;
+  color: #f85149;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+        .top-performers-section {
+          margin-top: 30px;
+        }
+        .top-performers-section h2 {
+          color: #2ea043;
+          margin-bottom: 8px;
+        }
+        .top-performers-section ul {
+          list-style: none;
+          padding-left: 0;
+          margin-bottom: 20px;
+        }
+        .top-performers-section li {
+          display: flex;
+          justify-content: space-between;
+          padding: 4px 0;
+          font-weight: 600;
+          font-size: 14px;
+        }
+        .market-news-section {
+          margin-top: 40px;
+          background: #161b22;
+          border-radius: 12px;
+          padding: 20px;
+          max-height: 350px;
+          overflow-y: auto;
+        }
+        .market-news-section h2 {
+          color: #2ea043;
+          margin-bottom: 12px;
+        }
+        .news-categories button {
+          margin-right: 12px;
+          padding: 6px 14px;
+          border-radius: 14px;
+          border: 2px solid #238636;
+          background: transparent;
+          color: #8b949e;
+          font-weight: 600;
+          cursor: pointer;
+          user-select: none;
+        }
+        .news-categories button.active {
+          background-color: #238636;
+          color: #c9d1d9;
+        }
+        .news-list {
+          list-style: none;
+          padding-left: 0;
+          margin-top: 16px;
+        }
+        .news-list li {
+          margin-bottom: 12px;
+        }
+        .news-list a {
+          color: #2ea043;
+          font-weight: 600;
+          text-decoration: none;
+        }
+        .news-list a:hover {
+          text-decoration: underline;
+        }
+        .news-list span {
+          margin-left: 8px;
+          font-size: 12px;
+          color: #8b949e;
+        }
+      
+
+        .analytics-hero {
+  position: relative;
+  /* existing styles */
+}
+
