@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
-import "./analysis.css";
+
+import NNav from './newnav.jsx';
+
+import Foot from './footer.jsx';// adjust the path as necessary
+import "./analysis.css"; 
 
 // Helper to convert priceHistory with OHLC to ApexCharts candlestick format
 function priceHistoryToCandlestickData(priceHistory) {
@@ -16,31 +20,52 @@ const chartOptionsBase = {
     type: "candlestick",
     height: 350,
     background: "transparent",
-    toolbar: { show: true }
+    toolbar: { show: true },
   },
   title: {
     text: "Candlestick Price Chart",
-    style: { color: "#30e9b7", fontWeight: "700", fontSize: 18 }
+    style: { color: "#f8f2ea", fontWeight: "800", fontSize: 20 }
   },
   xaxis: {
     type: "datetime",
-    labels: { style: { colors: "#31607f", fontWeight: 600 } },
-    axisBorder: { color: "#30e9b7" },
-    axisTicks: { color: "#30e9b7" }
+    labels: { style: { colors: "#b5bcdc", fontWeight: 600 } },
+    axisBorder: { color: "#ffe883" },
+    axisTicks: { color: "#ffe883" }
   },
   yaxis: {
-    labels: { style: { colors: "#153554", fontWeight: 700 } }
+    labels: { style: { colors: "#ffe883", fontWeight: 700 } }
   },
-  grid: { borderColor: "#dce9f4" },
+  grid: { borderColor: "#2fe8c030" },
   plotOptions: {
     candlestick: {
-      colors: { upward: "#30e9b7", downward: "#f45a6a" },
+      colors: { upward: "#ffe883", downward: "#ff7d74" },
       wick: { useFillColor: true }
     }
   },
-  tooltip: { enabled: true },
-  theme: { mode: "light" }
+  tooltip: {
+    enabled: true,
+    theme: 'dark',
+    style: {
+      fontSize: '13px',
+      fontWeight: 600,
+      fontFamily: 'Segoe UI, sans-serif',
+      colors: ['#ffffff'] // Force light text
+    },
+    fillSeriesColor: false,
+    onDatasetHover: {
+      highlightDataSeries: true
+    },
+    marker: {
+      show: false
+    },
+    fixed: {
+      enabled: false
+    },
+    background: '#1f2d3d', // Solid dark background
+  },
+  theme: { mode: "dark" }
 };
+
 
 // Color helper for percentages
 const percentColor = (val) => (val >= 0 ? "#30e9b7" : "#f45a6a");
@@ -81,6 +106,7 @@ function Table({ title, headers, rows, isPercentage }) {
   );
 }
 
+
 export default function MarketPulse() {
   const [stocks, setStocks] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -89,7 +115,6 @@ export default function MarketPulse() {
   const [selectedStock, setSelectedStock] = useState(null);
   const [suggestions, setSuggestions] = useState([]);
 
-  // Fetch stock data from public/data.json on mount
   useEffect(() => {
     fetch("/data.json")
       .then(res => {
@@ -148,177 +173,180 @@ export default function MarketPulse() {
     : [{ data: [] }];
 
   return (
-    <div className="market-pulse-wrapper">
-      <nav className="navbar" role="navigation">
-        <span className="navbar-title">StockTracker</span>
-        <a href="#" className="active">Home</a>
-        <a href="#">Live Stocks</a>
-        <a href="#">Analytics</a>
-      </nav>
+    <>
+      {/* Navbar at the top */}
+      <NNav />
 
-      <div className="background-overlay" />
+      <div className="market-pulse-wrapper">
+        {/* REMOVE the old nav you had here */}
 
-      <form className="search-bar" onSubmit={handleSubmit} autoComplete="off">
-        <input
-          type="text"
-          placeholder="Search stocks e.g. TCS, INFY"
-          value={search}
-          onChange={handleInput}
-          aria-autocomplete="list"
-          aria-controls="stock-list"
-          spellCheck="false"
-        />
-        <button type="submit" aria-label="Search" style={{ display: "none" }} />
-        {suggestions.length > 0 && (
-          <div className="suggestions" id="stock-list" role="listbox">
-            {suggestions.map((s) => (
-              <div
-                key={s.symbol}
-                role="option"
-                tabIndex={0}
-                className="suggestion"
-                onClick={() => selectStock(s.symbol)}
-                onKeyDown={(e) => {
-                  if (["Enter", " "].includes(e.key)) {
-                    e.preventDefault();
-                    selectStock(s.symbol);
-                  }
-                }}
-              >
-                {s.symbol} - {s.name}
-              </div>
-            ))}
-          </div>
-        )}
-      </form>
+        <div className="background-overlay" />
 
-      <main className="container" role="main" tabIndex={-1}>
-        <h1>Market Pulse - Stock Analysis</h1>
+        <form className="search-bar" onSubmit={handleSubmit} autoComplete="off">
+          <input
+            type="text"
+            placeholder="Search stocks e.g. TCS, INFY"
+            value={search}
+            onChange={handleInput}
+            aria-autocomplete="list"
+            aria-controls="stock-list"
+            spellCheck="false"
+          />
+          <button type="submit" aria-label="Search" style={{ display: "none" }} />
+          {suggestions.length > 0 && (
+            <div className="suggestions" id="stock-list" role="listbox">
+              {suggestions.map((s) => (
+                <div
+                  key={s.symbol}
+                  role="option"
+                  tabIndex={0}
+                  className="suggestion"
+                  onClick={() => selectStock(s.symbol)}
+                  onKeyDown={(e) => {
+                    if (["Enter", " "].includes(e.key)) {
+                      e.preventDefault();
+                      selectStock(s.symbol);
+                    }
+                  }}
+                >
+                  {s.symbol} - {s.name}
+                </div>
+              ))}
+            </div>
+          )}
+        </form>
 
-        {selectedStock ? (
-          <>
-            <article className="card overview-card" aria-label="Stock Overview and Details">
-              <h2>{selectedStock.name}</h2>
-              <p className="markets">{selectedStock.markets}</p>
+        <main className="container" role="main" tabIndex={-1}>
+          <h1>Market Pulse - Stock Analysis</h1>
 
-              <div className="overview-grid" aria-label="Key stock overview metrics">
-                {selectedStock.overview.map(({ label, value }, i) => (
-                  <div key={i} className="overview-metric">
-                    <span className="overview-label">{label}</span>
-                    <span className="overview-value">{value}</span>
+          {selectedStock ? (
+            <>
+              <article className="card overview-card" aria-label="Stock Overview and Details">
+                <h2>{selectedStock.name}</h2>
+                <p className="markets">{selectedStock.markets}</p>
+
+                <div className="overview-grid" aria-label="Key stock overview metrics">
+                  {selectedStock.overview.map(({ label, value }, i) => (
+                    <div key={i} className="overview-metric">
+                      <span className="overview-label">{label}</span>
+                      <span className="overview-value">{value}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <span
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => alert("Ratio editor coming soon!")}
+                  className="add-ratio"
+                >
+                  + Add ratio to table
+                </span>
+
+                <section className="pros-cons-row" aria-label="Pros and Cons">
+                  <div className="pros-list">
+                    <h3>Pros</h3>
+                    <ul>
+                      {selectedStock.pros.map((p, idx) => (
+                        <li key={idx}>{p}</li>
+                      ))}
+                    </ul>
                   </div>
-                ))}
-              </div>
+                  <div className="cons-list">
+                    <h3>Cons</h3>
+                    <ul>
+                      {selectedStock.cons.map((c, idx) => (
+                        <li key={idx}>{c}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </section>
 
-              <span
-                role="button"
-                tabIndex={0}
-                onClick={() => alert("Ratio editor coming soon!")}
-                className="add-ratio"
-              >
-                + Add ratio to table
-              </span>
+                <div className="alert-badge" aria-live="polite" aria-atomic="true">
+                  ⚡ {selectedStock.alerts.join(" | ")}
+                </div>
 
-              <section className="pros-cons-row" aria-label="Pros and Cons">
-                <div className="pros-list">
-                  <h3>Pros</h3>
-                  <ul>
-                    {selectedStock.pros.map((p, idx) => (
-                      <li key={idx}>{p}</li>
-                    ))}
-                  </ul>
+                <div className="period-btns" aria-label="Selectable periods (not functional)">
+                  {selectedStock.periods.map((period) => (
+                    <button key={period} className="period-btn" disabled>{period}</button>
+                  ))}
                 </div>
-                <div className="cons-list">
-                  <h3>Cons</h3>
-                  <ul>
-                    {selectedStock.cons.map((c, idx) => (
-                      <li key={idx}>{c}</li>
-                    ))}
-                  </ul>
-                </div>
+              </article>
+
+              <section className="chart-section" aria-label={`Price candlestick chart of ${selectedStock.symbol}`}>
+                <Chart
+                  options={{
+                    ...chartOptionsBase,
+                    title: {
+                      ...chartOptionsBase.title,
+                      text: `${selectedStock.name} Candlestick Price Chart`
+                    }
+                  }}
+                  series={candlestickSeries}
+                  type="candlestick"
+                  height={370}
+                />
               </section>
 
-              <div className="alert-badge" aria-live="polite" aria-atomic="true">
-                ⚡ {selectedStock.alerts.join(" | ")}
-              </div>
-
-              <div className="period-btns" aria-label="Selectable periods (not functional)">
-                {selectedStock.periods.map((period) => (
-                  <button key={period} className="period-btn" disabled>{period}</button>
-                ))}
-              </div>
-            </article>
-
-            <section className="chart-section" aria-label={`Price candlestick chart of ${selectedStock.symbol}`}>
-              <Chart
-                options={{
-                  ...chartOptionsBase,
-                  title: {
-                    ...chartOptionsBase.title,
-                    text: `${selectedStock.name} Candlestick Price Chart`
-                  }
-                }}
-                series={candlestickSeries}
-                type="candlestick"
-                height={370}
+              <Table
+                title="Quarterly Consolidated Financials (₹ Crores)"
+                headers={["Metric"].concat(selectedStock.quarterly.headers)}
+                rows={[
+                  ["Sales (₹ Cr)"].concat(selectedStock.quarterly.sales),
+                  ["Expenses (₹ Cr)"].concat(selectedStock.quarterly.expenses),
+                  ["Net Profit (₹ Cr)"].concat(selectedStock.quarterly.netProfit),
+                  ["EPS (₹)"].concat(selectedStock.quarterly.EPS),
+                  ["OPM %"].concat(selectedStock.quarterly.OPMPercent.map(v => v + "%"))
+                ]}
+                isPercentage
               />
-            </section>
 
-            <Table
-              title="Quarterly Consolidated Financials (₹ Crores)"
-              headers={["Metric"].concat(selectedStock.quarterly.headers)}
-              rows={[
-                ["Sales (₹ Cr)"].concat(selectedStock.quarterly.sales),
-                ["Expenses (₹ Cr)"].concat(selectedStock.quarterly.expenses),
-                ["Net Profit (₹ Cr)"].concat(selectedStock.quarterly.netProfit),
-                ["EPS (₹)"].concat(selectedStock.quarterly.EPS),
-                ["OPM %"].concat(selectedStock.quarterly.OPMPercent.map(v => v + "%"))
-              ]}
-              isPercentage
-            />
+              <Table
+                title="Yearly Profit & Loss Summary"
+                headers={["Metric"].concat(selectedStock.yearlyPL.years)}
+                rows={[
+                  ["Sales (₹ Cr)"].concat(selectedStock.yearlyPL.sales),
+                  ["Expenses (₹ Cr)"].concat(selectedStock.yearlyPL.expenses),
+                  ["Net Profit (₹ Cr)"].concat(selectedStock.yearlyPL.netProfit),
+                  ["OPM %"].concat(selectedStock.yearlyPL.OPMPercent.map(v => v + "%"))
+                ]}
+                isPercentage
+              />
 
-            <Table
-              title="Yearly Profit & Loss Summary"
-              headers={["Metric"].concat(selectedStock.yearlyPL.years)}
-              rows={[
-                ["Sales (₹ Cr)"].concat(selectedStock.yearlyPL.sales),
-                ["Expenses (₹ Cr)"].concat(selectedStock.yearlyPL.expenses),
-                ["Net Profit (₹ Cr)"].concat(selectedStock.yearlyPL.netProfit),
-                ["OPM %"].concat(selectedStock.yearlyPL.OPMPercent.map(v => v + "%"))
-              ]}
-              isPercentage
-            />
-
-            <section aria-label="Shareholding Pattern">
-              <h3 className="shareholding-heading">Shareholding Pattern (Latest)</h3>
-              <div className="shareholding-table-wrap">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Category</th>
-                      <th>% Holding</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {selectedStock.shareholding.categories.map((cat, i) => (
-                      <tr key={i}>
-                        <td>{cat}</td>
-                        <td style={{ textAlign: "right" }}>
-                          {selectedStock.shareholding.percentages[i]}%
-                        </td>
+              <section aria-label="Shareholding Pattern">
+                <h3 className="shareholding-heading">Shareholding Pattern (Latest)</h3>
+                <div className="shareholding-table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Category</th>
+                        <th>% Holding</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </section>
-          </>
-        ) : (
-          <p className="empty-message" aria-live="polite">
-            Search a stock (e.g., TCS) to view detailed financial analysis.
-          </p>
-        )}
-      </main>
-    </div>
+                    </thead>
+                    <tbody>
+                      {selectedStock.shareholding.categories.map((cat, i) => (
+                        <tr key={i}>
+                          <td>{cat}</td>
+                          <td style={{ textAlign: "right" }}>
+                            {selectedStock.shareholding.percentages[i]}%
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+            </>
+          ) : (
+            <p className="empty-message" aria-live="polite">
+              Search a stock (e.g., TCS) to view detailed financial analysis.
+            </p>
+          )}
+        </main>
+      </div>
+
+      {/* Footer at the bottom */}
+      <Foot />
+    </>
   );
 }

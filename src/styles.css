@@ -1,28 +1,21 @@
-
-/* styles.css */
-
-/* Reset and base styling */
+/* Reset and base styles */
 html, body, #root, #__app-root {
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #000; /* Optional: consistent background */
+  background-color: #000;
   color: #b9fff8;
   box-sizing: border-box;
 }
 
-/* Flex container for the entire app */
-#__app-root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* Main content grows to fill available space */
-.main-content {
-  flex: 1 0 auto;
-  padding: 1rem 2rem;  /* Optional padding for breathing room */
+/* No min-height on page content wrappers */
+.loginBody,
+.market-pulse-wrapper {
+  min-height: unset !important; /* important to override any existing 100vh */
+  margin-bottom: 0 !important;
+  padding-bottom: 2rem; /* space so footer doesn’t overlap */
+  box-sizing: border-box;
 }
 
 /* Navbar styles */
@@ -55,6 +48,7 @@ html, body, #root, #__app-root {
   user-select: none;
   transition: transform 0.3s;
 }
+
 .logo:hover {
   transform: scale(1.05);
 }
@@ -65,11 +59,13 @@ html, body, #root, #__app-root {
   font-size: 1.125rem;
   font-weight: 500;
 }
+
 .nav-links span {
   cursor: pointer;
   color: white;
   user-select: none;
 }
+
 .nav-links span:hover {
   color: #48bb78;
 }
@@ -89,6 +85,7 @@ html, body, #root, #__app-root {
   user-select: none;
   cursor: default;
 }
+
 .profile-circle:hover {
   transform: scale(1.05);
 }
@@ -103,6 +100,7 @@ html, body, #root, #__app-root {
   font-weight: 600;
   transition: background-color 0.3s, color 0.3s;
 }
+
 .auth-button:hover {
   background-color: #48bb78;
   color: #08223c;
@@ -114,7 +112,7 @@ html, body, #root, #__app-root {
   font-family: 'Segoe UI', sans-serif;
   box-sizing: border-box;
   width: 100%;
-  /* Ensure footer is not shrunk */
+  /* keep footer from shrinking */
   flex-shrink: 0;
 }
 
@@ -181,6 +179,7 @@ footer {
   color: #3ddc97;
   transition: transform 0.3s ease;
 }
+
 .socials a:hover {
   transform: scale(1.2);
   color: #ffffff;
@@ -198,4 +197,3 @@ footer {
     padding: 30px 20px;
   }
 }
-

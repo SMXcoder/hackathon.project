@@ -16,7 +16,7 @@ const Login = ({ setIsLoggedIn }) => {
     if (matched) {
       localStorage.setItem('loggedIn', 'true');
       localStorage.setItem('username', username);
-      setIsLoggedIn(true); // ✅ this auto-updates App.js and reloads the view
+      setIsLoggedIn(true);
       navigate('/home');
     } else {
       alert('Invalid credentials!');
@@ -24,25 +24,27 @@ const Login = ({ setIsLoggedIn }) => {
   };
 
   return (
-    <div className="login-body">
-      <div className="container">
-        <h2>User Login</h2>
-        <input
-          type="text"
-          placeholder="Enter Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Enter Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button onClick={handleLogin}>Login</button>
-        <p>
-          Don't have an account? <Link to="/signup">Sign up here</Link>
-        </p>
+    <div className="login-page">
+      <div className="login-body">
+        <div className="container">
+          <h2>User Login</h2>
+          <input
+            type="text"
+            placeholder="Enter Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Enter Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button onClick={handleLogin}>Login</button>
+          <p>
+            Don't have an account? <Link to="/signup">Sign up here</Link>
+          </p>
+        </div>
       </div>
     </div>
   );

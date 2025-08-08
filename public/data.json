@@ -247,68 +247,643 @@
       "percentages": [25.00, 40.00, 20.00, 0.50, 14.50]
     }
   },
+  
   {
-    "symbol": "HINDUNILVR",
-    "name": "Hindustan Unilever Ltd.",
-    "markets": "Part of: BSE Sensex, Nifty 50",
+    "symbol": "INFY",
+    "name": "Infosys Ltd.",
+    "markets": "Part of: BSE Sensex, Nifty 50, BSE IT",
     "overview": [
-      { "label": "Market Cap", "value": "₹ 5,50,000 Cr." },
-      { "label": "Current Price", "value": "₹ 2,350" },
-      { "label": "High / Low", "value": "₹ 2,600 / 2,100" },
-      { "label": "Stock P/E", "value": "45.0" },
-      { "label": "Book Value", "value": "₹ 220" },
-      { "label": "Dividend Yield", "value": "1.25 %" },
-      { "label": "ROCE", "value": "55.0 %" },
-      { "label": "ROE", "value": "33.0 %" },
-      { "label": "Face Value", "value": "₹ 1.00" }
+      { "label": "Market Cap", "value": "₹ 780,000 Cr." },
+      { "label": "Current Price", "value": "₹ 1,450" },
+      { "label": "High / Low", "value": "₹ 1,600 / 1,200" },
+      { "label": "Stock P/E", "value": "25.5" },
+      { "label": "Book Value", "value": "₹ 300" },
+      { "label": "Dividend Yield", "value": "1.5 %" },
+      { "label": "ROCE", "value": "35.0 %" },
+      { "label": "ROE", "value": "28.5 %" },
+      { "label": "Face Value", "value": "₹ 5.00" }
     ],
     "pros": [
-      "Strong brand portfolio with wide penetration.",
-      "Consistent revenue growth."
+      "Strong global delivery model",
+      "Consistent earnings growth"
     ],
     "cons": [
-      "High valuation multiples.",
-      "Exposure to commodity price volatility."
+      "Margin pressures from wage hikes",
+      "Currency fluctuations impact profitability"
     ],
-    "alerts": ["ROCE strong at 55%", "Premium valuation"],
+    "alerts": [
+      "ROE above 25%",
+      "Stable dividend payouts"
+    ],
     "periods": ["1M", "6M", "1Yr", "3Yr", "5Yr", "10Yr", "Max"],
     "priceHistory": [
-      { "date": "2023-01-01", "price": 2300 },
-      { "date": "2023-02-01", "price": 2350 },
-      { "date": "2023-03-01", "price": 2375 },
-      { "date": "2023-04-01", "price": 2400 },
-      { "date": "2023-05-01", "price": 2380 },
-      { "date": "2023-06-01", "price": 2430 },
-      { "date": "2023-07-01", "price": 2390 },
-      { "date": "2023-08-01", "price": 2350 }
+      { "date": "2023-01-01", "open": 1400, "high": 1450, "low": 1350, "close": 1425 },
+      { "date": "2023-02-01", "open": 1425, "high": 1470, "low": 1380, "close": 1460 },
+      { "date": "2023-03-01", "open": 1460, "high": 1485, "low": 1420, "close": 1455 },
+      { "date": "2023-04-01", "open": 1455, "high": 1500, "low": 1430, "close": 1490 },
+      { "date": "2023-05-01", "open": 1490, "high": 1520, "low": 1465, "close": 1505 },
+      { "date": "2023-06-01", "open": 1505, "high": 1550, "low": 1480, "close": 1540 },
+      { "date": "2023-07-01", "open": 1540, "high": 1575, "low": 1520, "close": 1565 },
+      { "date": "2023-08-01", "open": 1565, "high": 1590, "low": 1545, "close": 1580 }
     ],
     "quarterly": {
-      "headers": [
-        "Jun 2022", "Sep 2022", "Dec 2022", "Mar 2023", "Jun 2023",
-        "Sep 2023", "Dec 2023", "Mar 2024", "Jun 2024", "Sep 2024",
-        "Dec 2024", "Mar 2025", "Jun 2025"
-      ],
-      "sales": [18000, 18500, 19000, 19500, 19800, 20000, 20500, 20700, 21000, 21500, 21300, 21400, 21500],
-      "expenses": [12000, 12200, 12400, 12500, 12700, 12800, 13000, 13100, 13200, 13400, 13300, 13400, 13500],
-      "netProfit": [4500, 4600, 4700, 4800, 4850, 4900, 4950, 5000, 5050, 5100, 5150, 5175, 5200],
-      "EPS": [17.0, 17.5, 18.0, 18.5, 18.7, 18.9, 19.0, 19.2, 19.3, 19.4, 19.5, 19.6, 19.7],
-      "OPMPercent": [33, 33, 33, 34, 34, 34, 34, 35, 35, 35, 35, 35, 35]
+      "headers": ["Jun 2022", "Sep 2022", "Dec 2022", "Mar 2023", "Jun 2023"],
+      "sales": [15000, 15200, 15500, 15800, 16000],
+      "expenses": [9000, 9200, 9500, 9700, 9800],
+      "netProfit": [3000, 3100, 3200, 3300, 3350],
+      "EPS": [18.0, 18.5, 19.0, 19.5, 20.0],
+      "OPMPercent": [25, 26, 26, 27, 27]
     },
     "yearlyPL": {
-      "years": [
-        "Mar 2014", "Mar 2015", "Mar 2016", "Mar 2017", "Mar 2018",
-        "Mar 2019", "Mar 2020", "Mar 2021", "Mar 2022", "Mar 2023", "Mar 2024", "Mar 2025"
-      ],
-      "sales": [70000, 74000, 78000, 81000, 85000, 90000, 94000, 98000, 102000, 106000, 110000, 114000],
-      "expenses": [48000, 51000, 54000, 56000, 59000, 62000, 64000, 67000, 70000, 73000, 76000, 79000],
-      "netProfit": [16500, 17000, 17500, 18000, 18500, 19000, 19500, 20000, 20500, 21000, 21500, 22000],
-      "OPMPercent": [31, 31, 32, 32, 33, 33, 33, 34, 34, 34, 34, 35]
+      "years": ["Mar 2020", "Mar 2021", "Mar 2022", "Mar 2023", "Mar 2024"],
+      "sales": [58000, 60000, 62000, 64000, 66000],
+      "expenses": [35000, 36000, 37000, 38000, 39000],
+      "netProfit": [12000, 12500, 13000, 13500, 14000],
+      "OPMPercent": [24, 25, 25, 26, 26]
     },
     "shareholding": {
       "categories": ["Promoters", "FIIs", "DIIs", "Government", "Public"],
-      "percentages": [61.00, 18.00, 9.00, 0.20, 11.80]
+      "percentages": [13, 35, 40, 1, 11]
+    }
+  },
+  {
+    "symbol": "HINDUNILVR",
+    "name": "Hindustan Unilever Ltd.",
+    "markets": "Part of: BSE Sensex, Nifty 50, BSE FMCG",
+    "overview": [
+      { "label": "Market Cap", "value": "₹ 600,000 Cr." },
+      { "label": "Current Price", "value": "₹ 2,400" },
+      { "label": "High / Low", "value": "₹ 2,600 / 2,200" },
+      { "label": "Stock P/E", "value": "60.0" },
+      { "label": "Book Value", "value": "₹ 50" },
+      { "label": "Dividend Yield", "value": "1.0 %" },
+      { "label": "ROCE", "value": "75 %" },
+      { "label": "ROE", "value": "70 %" },
+      { "label": "Face Value", "value": "₹ 1.00" }
+    ],
+    "pros": [
+      "Strong brand portfolio",
+      "Stable cash flows"
+    ],
+    "cons": [
+      "High valuation",
+      "Slower volume growth in rural markets"
+    ],
+    "alerts": [
+      "High P/E ratio",
+      "Strong ROE and ROCE"
+    ],
+    "periods": ["1M", "6M", "1Yr", "3Yr", "5Yr", "10Yr", "Max"],
+    "priceHistory": [
+      { "date": "2023-01-01", "open": 2300, "high": 2400, "low": 2250, "close": 2380 },
+      { "date": "2023-02-01", "open": 2380, "high": 2450, "low": 2320, "close": 2400 },
+      { "date": "2023-03-01", "open": 2400, "high": 2500, "low": 2350, "close": 2490 },
+      { "date": "2023-04-01", "open": 2490, "high": 2550, "low": 2440, "close": 2520 },
+      { "date": "2023-05-01", "open": 2520, "high": 2570, "low": 2480, "close": 2550 },
+      { "date": "2023-06-01", "open": 2550, "high": 2600, "low": 2510, "close": 2580 },
+      { "date": "2023-07-01", "open": 2580, "high": 2650, "low": 2550, "close": 2620 },
+      { "date": "2023-08-01", "open": 2620, "high": 2670, "low": 2600, "close": 2650 }
+    ],
+    "quarterly": {
+      "headers": ["Jun 2022", "Sep 2022", "Dec 2022", "Mar 2023", "Jun 2023"],
+      "sales": [13500, 14000, 14500, 15000, 14800],
+      "expenses": [7500, 7700, 7900, 8100, 8000],
+      "netProfit": [4000, 4200, 4400, 4500, 4450],
+      "EPS": [11.5, 12.0, 12.5, 13.0, 12.8],
+      "OPMPercent": [30, 31, 31, 32, 31]
+    },
+    "yearlyPL": {
+      "years": ["Mar 2020", "Mar 2021", "Mar 2022", "Mar 2023", "Mar 2024"],
+      "sales": [52000, 54000, 56000, 58000, 60000],
+      "expenses": [31000, 32000, 33000, 34000, 35000],
+      "netProfit": [16000, 17000, 18000, 18500, 19000],
+      "OPMPercent": [31, 31, 32, 32, 32]
+    },
+    "shareholding": {
+      "categories": ["Promoters", "FIIs", "DIIs", "Government", "Public"],
+      "percentages": [67, 12, 10, 1, 10]
+    }
+  },
+  {
+    "symbol": "ICICIBANK",
+    "name": "ICICI Bank Ltd.",
+    "markets": "Part of: BSE Sensex, Nifty 50",
+    "overview": [
+      { "label": "Market Cap", "value": "₹ 550,000 Cr." },
+      { "label": "Current Price", "value": "₹ 850" },
+      { "label": "High / Low", "value": "₹ 900 / 750" },
+      { "label": "Stock P/E", "value": "25.0" },
+      { "label": "Book Value", "value": "₹ 220" },
+      { "label": "Dividend Yield", "value": "0.7 %" },
+      { "label": "ROCE", "value": "15 %" },
+      { "label": "ROE", "value": "13 %" },
+      { "label": "Face Value", "value": "₹ 2.00" }
+    ],
+    "pros": [
+      "Strong retail loan growth",
+      "Good asset quality"
+    ],
+    "cons": [
+      "Exposure to corporate loans",
+      "High competition in banking sector"
+    ],
+    "alerts": [
+      "Improving asset quality",
+      "Moderate dividend yield"
+    ],
+    "periods": ["1M", "6M", "1Yr", "3Yr", "5Yr", "10Yr", "Max"],
+    "priceHistory": [
+      { "date": "2023-01-01", "open": 820, "high": 860, "low": 800, "close": 840 },
+      { "date": "2023-02-01", "open": 840, "high": 880, "low": 830, "close": 860 },
+      { "date": "2023-03-01", "open": 860, "high": 890, "low": 850, "close": 880 },
+      { "date": "2023-04-01", "open": 880, "high": 900, "low": 870, "close": 890 },
+      { "date": "2023-05-01", "open": 890, "high": 920, "low": 880, "close": 910 },
+      { "date": "2023-06-01", "open": 910, "high": 940, "low": 900, "close": 930 },
+      { "date": "2023-07-01", "open": 930, "high": 960, "low": 920, "close": 950 },
+      { "date": "2023-08-01", "open": 950, "high": 970, "low": 940, "close": 960 }
+    ],
+    "quarterly": {
+      "headers": ["Jun 2022", "Sep 2022", "Dec 2022", "Mar 2023", "Jun 2023"],
+      "sales": [12000, 12500, 13000, 13500, 13200],
+      "expenses": [8500, 8600, 8700, 9000, 8900],
+      "netProfit": [1800, 1900, 2000, 2100, 2050],
+      "EPS": [10.0, 10.5, 11.0, 11.5, 11.3],
+      "OPMPercent": [25, 26, 26, 27, 26]
+    },
+    "yearlyPL": {
+      "years": ["Mar 2020", "Mar 2021", "Mar 2022", "Mar 2023", "Mar 2024"],
+      "sales": [48000, 50000, 52000, 54000, 55000],
+      "expenses": [35000, 36000, 37000, 38000, 38500],
+      "netProfit": [7000, 7300, 7500, 7800, 8000],
+      "OPMPercent": [23, 24, 24, 25, 25]
+    },
+    "shareholding": {
+      "categories": ["Promoters", "FIIs", "DIIs", "Government", "Public"],
+      "percentages": [56, 22, 15, 2, 5]
+    }
+  },{
+    "symbol": "TATASTEEL",
+    "name": "Tata Steel Ltd.",
+    "markets": "Part of: BSE Sensex, Nifty 50",
+    "overview": [
+      { "label": "Market Cap", "value": "₹ 120,000 Cr." },
+      { "label": "Current Price", "value": "₹ 1200" },
+      { "label": "High / Low", "value": "₹ 1300 / 1050" },
+      { "label": "Stock P/E", "value": "15.5" },
+      { "label": "Book Value", "value": "₹ 850" },
+      { "label": "Dividend Yield", "value": "1.2 %" },
+      { "label": "ROCE", "value": "18 %" },
+      { "label": "ROE", "value": "12 %" },
+      { "label": "Face Value", "value": "₹ 10.00" }
+    ],
+    "pros": [
+      "Strong presence in steel market",
+      "Efficient cost management"
+    ],
+    "cons": [
+      "Exposure to commodity price volatility",
+      "High capital expenditure"
+    ],
+    "alerts": [
+      "Volatile steel prices impact margin",
+      "Moderate ROE"
+    ],
+    "periods": ["1M", "6M", "1Yr", "3Yr", "5Yr", "10Yr", "Max"],
+    "priceHistory": [
+      { "date": "2023-01-01", "open": 1150, "high": 1220, "low": 1100, "close": 1180 },
+      { "date": "2023-02-01", "open": 1180, "high": 1240, "low": 1150, "close": 1210 },
+      { "date": "2023-03-01", "open": 1210, "high": 1250, "low": 1170, "close": 1235 },
+      { "date": "2023-04-01", "open": 1235, "high": 1290, "low": 1200, "close": 1275 },
+      { "date": "2023-05-01", "open": 1275, "high": 1300, "low": 1230, "close": 1280 },
+      { "date": "2023-06-01", "open": 1280, "high": 1320, "low": 1250, "close": 1310 },
+      { "date": "2023-07-01", "open": 1310, "high": 1350, "low": 1290, "close": 1330 },
+      { "date": "2023-08-01", "open": 1330, "high": 1370, "low": 1300, "close": 1355 }
+    ],
+    "quarterly": {
+      "headers": ["Jun 2022", "Sep 2022", "Dec 2022", "Mar 2023", "Jun 2023"],
+      "sales": [35000, 36000, 37000, 38000, 37500],
+      "expenses": [30000, 31000, 32000, 32500, 32000],
+      "netProfit": [2500, 2600, 2700, 2800, 2750],
+      "EPS": [15.0, 15.5, 16.0, 16.5, 16.2],
+      "OPMPercent": [14, 14, 15, 15, 15]
+    },
+    "yearlyPL": {
+      "years": ["Mar 2020", "Mar 2021", "Mar 2022", "Mar 2023", "Mar 2024"],
+      "sales": [130000, 140000, 145000, 150000, 155000],
+      "expenses": [110000, 115000, 117000, 120000, 122000],
+      "netProfit": [8000, 9000, 9200, 9500, 9700],
+      "OPMPercent": [15, 15, 16, 16, 16]
+    },
+    "shareholding": {
+      "categories": ["Promoters", "FIIs", "DIIs", "Government", "Public"],
+      "percentages": [29, 26, 30, 1, 14]
+    }
+  },
+  {
+    "symbol": "TATAMOTORS",
+    "name": "Tata Motors Ltd.",
+    "markets": "Part of: BSE Sensex, Nifty 50, BSE Auto",
+    "overview": [
+      { "label": "Market Cap", "value": "₹ 85,000 Cr." },
+      { "label": "Current Price", "value": "₹ 480" },
+      { "label": "High / Low", "value": "₹ 520 / 430" },
+      { "label": "Stock P/E", "value": "20.0" },
+      { "label": "Book Value", "value": "₹ 400" },
+      { "label": "Dividend Yield", "value": "0.0 %" },
+      { "label": "ROCE", "value": "10 %" },
+      { "label": "ROE", "value": "8 %" },
+      { "label": "Face Value", "value": "₹ 2.00" }
+    ],
+    "pros": [
+      "Strong commercial vehicle market share",
+      "Electrification initiatives underway"
+    ],
+    "cons": [
+      "Volatile earnings",
+      "Exposure to foreign currency fluctuations"
+    ],
+    "alerts": [
+      "Earnings volatility",
+      "Focus on EV segment growth"
+    ],
+    "periods": ["1M", "6M", "1Yr", "3Yr", "5Yr", "10Yr", "Max"],
+    "priceHistory": [
+      { "date": "2023-01-01", "open": 470, "high": 490, "low": 450, "close": 480 },
+      { "date": "2023-02-01", "open": 480, "high": 500, "low": 460, "close": 495 },
+      { "date": "2023-03-01", "open": 495, "high": 510, "low": 480, "close": 500 },
+      { "date": "2023-04-01", "open": 500, "high": 520, "low": 490, "close": 515 },
+      { "date": "2023-05-01", "open": 515, "high": 530, "low": 495, "close": 525 },
+      { "date": "2023-06-01", "open": 525, "high": 545, "low": 510, "close": 540 },
+      { "date": "2023-07-01", "open": 540, "high": 560, "low": 530, "close": 555 },
+      { "date": "2023-08-01", "open": 555, "high": 570, "low": 545, "close": 565 }
+    ],
+    "quarterly": {
+      "headers": ["Jun 2022", "Sep 2022", "Dec 2022", "Mar 2023", "Jun 2023"],
+      "sales": [20000, 21000, 22000, 23000, 22500],
+      "expenses": [19500, 20500, 21500, 22500, 22000],
+      "netProfit": [200, 300, 400, 500, 450],
+      "EPS": [2.0, 3.0, 4.0, 5.0, 4.5],
+      "OPMPercent": [3, 4, 5, 6, 5]
+    },
+    "yearlyPL": {
+      "years": ["Mar 2020", "Mar 2021", "Mar 2022", "Mar 2023", "Mar 2024"],
+      "sales": [85000, 90000, 95000, 98000, 100000],
+      "expenses": [83000, 88000, 92000, 95000, 97000],
+      "netProfit": [1000, 1500, 2000, 2300, 2400],
+      "OPMPercent": [5, 6, 6, 7, 7]
+    },
+    "shareholding": {
+      "categories": ["Promoters", "FIIs", "DIIs", "Government", "Public"],
+      "percentages": [36, 20, 28, 1, 15]
+    }
+  },
+  {
+    "symbol": "WIPRO",
+    "name": "Wipro Ltd.",
+    "markets": "Part of: BSE Sensex, Nifty 50, BSE IT",
+    "overview": [
+      { "label": "Market Cap", "value": "₹ 220,000 Cr." },
+      { "label": "Current Price", "value": "₹ 530" },
+      { "label": "High / Low", "value": "₹ 560 / 480" },
+      { "label": "Stock P/E", "value": "28.0" },
+      { "label": "Book Value", "value": "₹ 120" },
+      { "label": "Dividend Yield", "value": "1.4 %" },
+      { "label": "ROCE", "value": "30 %" },
+      { "label": "ROE", "value": "25 %" },
+      { "label": "Face Value", "value": "₹ 2.00" }
+    ],
+    "pros": [
+      "Good diversification",
+      "Strong client relationships"
+    ],
+    "cons": [
+      "Intense pricing pressure",
+      "Currency risk impacts margins"
+    ],
+    "alerts": [
+      "Stable dividend",
+      "Increasing revenues"
+    ],
+    "periods": ["1M", "6M", "1Yr", "3Yr", "5Yr", "10Yr", "Max"],
+    "priceHistory": [
+      { "date": "2023-01-01", "open": 510, "high": 535, "low": 500, "close": 525 },
+      { "date": "2023-02-01", "open": 525, "high": 545, "low": 515, "close": 540 },
+      { "date": "2023-03-01", "open": 540, "high": 550, "low": 530, "close": 545 },
+      { "date": "2023-04-01", "open": 545, "high": 560, "low": 535, "close": 555 },
+      { "date": "2023-05-01", "open": 555, "high": 570, "low": 545, "close": 565 },
+      { "date": "2023-06-01", "open": 565, "high": 580, "low": 555, "close": 575 },
+      { "date": "2023-07-01", "open": 575, "high": 590, "low": 565, "close": 585 },
+      { "date": "2023-08-01", "open": 585, "high": 600, "low": 575, "close": 595 }
+    ],
+    "quarterly": {
+      "headers": ["Jun 2022", "Sep 2022", "Dec 2022", "Mar 2023", "Jun 2023"],
+      "sales": [11000, 11200, 11400, 11700, 11500],
+      "expenses": [7000, 7100, 7200, 7300, 7250],
+      "netProfit": [2500, 2600, 2700, 2800, 2750],
+      "EPS": [4.5, 4.7, 4.9, 5.1, 5.0],
+      "OPMPercent": [35, 35, 36, 36, 36]
+    },
+    "yearlyPL": {
+      "years": ["Mar 2020", "Mar 2021", "Mar 2022", "Mar 2023", "Mar 2024"],
+      "sales": [45000, 46000, 47000, 48000, 49000],
+      "expenses": [28000, 28500, 29000, 29500, 30000],
+      "netProfit": [11000, 11200, 11500, 11700, 12000],
+      "OPMPercent": [32, 32, 33, 33, 33]
+    },
+    "shareholding": {
+      "categories": ["Promoters", "FIIs", "DIIs", "Government", "Public"],
+      "percentages": [77, 10, 8, 0, 5]
+    }
+  },
+  {
+    "symbol": "AXISBANK",
+    "name": "Axis Bank Ltd.",
+    "markets": "Part of: BSE Sensex, Nifty 50",
+    "overview": [
+      { "label": "Market Cap", "value": "₹ 300,000 Cr." },
+      { "label": "Current Price", "value": "₹ 850" },
+      { "label": "High / Low", "value": "₹ 900 / 780" },
+      { "label": "Stock P/E", "value": "24.0" },
+      { "label": "Book Value", "value": "₹ 280" },
+      { "label": "Dividend Yield", "value": "0.6 %" },
+      { "label": "ROCE", "value": "18 %" },
+      { "label": "ROE", "value": "15 %" },
+      { "label": "Face Value", "value": "₹ 2.00" }
+    ],
+    "pros": [
+      "Strong CASA growth",
+      "Good asset quality"
+    ],
+    "cons": [
+      "Competitive banking sector",
+      "Pressure on margins"
+    ],
+    "alerts": [
+      "Improving profitability",
+      "Stable loan growth"
+    ],
+    "periods": ["1M", "6M", "1Yr", "3Yr", "5Yr", "10Yr", "Max"],
+    "priceHistory": [
+      { "date": "2023-01-01", "open": 830, "high": 860, "low": 810, "close": 840 },
+      { "date": "2023-02-01", "open": 840, "high": 870, "low": 835, "close": 860 },
+      { "date": "2023-03-01", "open": 860, "high": 890, "low": 845, "close": 880 },
+      { "date": "2023-04-01", "open": 880, "high": 900, "low": 870, "close": 895 },
+      { "date": "2023-05-01", "open": 895, "high": 915, "low": 880, "close": 910 },
+      { "date": "2023-06-01", "open": 910, "high": 940, "low": 900, "close": 930 },
+      { "date": "2023-07-01", "open": 930, "high": 950, "low": 920, "close": 945 },
+      { "date": "2023-08-01", "open": 945, "high": 960, "low": 930, "close": 955 }
+    ],
+    "quarterly": {
+      "headers": ["Jun 2022", "Sep 2022", "Dec 2022", "Mar 2023", "Jun 2023"],
+      "sales": [17000, 17500, 18000, 18500, 18200],
+      "expenses": [12000, 12500, 13000, 13300, 13100],
+      "netProfit": [2500, 2600, 2700, 2800, 2750],
+      "EPS": [11.5, 12.0, 12.5, 13.0, 12.8],
+      "OPMPercent": [25, 26, 26, 27, 27]
+    },
+    "yearlyPL": {
+      "years": ["Mar 2020", "Mar 2021", "Mar 2022", "Mar 2023", "Mar 2024"],
+      "sales": [65000, 67000, 69000, 71000, 72000],
+      "expenses": [48000, 49000, 51000, 52500, 53000],
+      "netProfit": [7000, 7300, 7600, 7800, 8000],
+      "OPMPercent": [24, 24, 25, 25, 26]
+    },
+    "shareholding": {
+      "categories": ["Promoters", "FIIs", "DIIs", "Government", "Public"],
+      "percentages": [26, 40, 25, 1, 8]
+    }
+  },
+  {
+    "symbol": "SUNPHARMA",
+    "name": "Sun Pharmaceutical Industries Ltd.",
+    "markets": "Part of: BSE Sensex, Nifty 50, BSE Pharma",
+    "overview": [
+      { "label": "Market Cap", "value": "₹ 160,000 Cr." },
+      { "label": "Current Price", "value": "₹ 800" },
+      { "label": "High / Low", "value": "₹ 850 / 720" },
+      { "label": "Stock P/E", "value": "28.0" },
+      { "label": "Book Value", "value": "₹ 180" },
+      { "label": "Dividend Yield", "value": "1.0 %" },
+      { "label": "ROCE", "value": "22 %" },
+      { "label": "ROE", "value": "18 %" },
+      { "label": "Face Value", "value": "₹ 2.00" }
+    ],
+    "pros": [
+      "Strong R&D pipeline",
+      "Good export market presence"
+    ],
+    "cons": [
+      "Regulatory risks",
+      "High competition in generics"
+    ],
+    "alerts": [
+      "Moderate dividend",
+      "Strong pipeline"
+    ],
+    "periods": ["1M", "6M", "1Yr", "3Yr", "5Yr", "10Yr", "Max"],
+    "priceHistory": [
+      { "date": "2023-01-01", "open": 780, "high": 810, "low": 760, "close": 795 },
+      { "date": "2023-02-01", "open": 795, "high": 825, "low": 780, "close": 810 },
+      { "date": "2023-03-01", "open": 810, "high": 830, "low": 790, "close": 820 },
+      { "date": "2023-04-01", "open": 820, "high": 840, "low": 800, "close": 835 },
+      { "date": "2023-05-01", "open": 835, "high": 850, "low": 820, "close": 845 },
+      { "date": "2023-06-01", "open": 845, "high": 860, "low": 830, "close": 855 },
+      { "date": "2023-07-01", "open": 855, "high": 870, "low": 840, "close": 865 },
+      { "date": "2023-08-01", "open": 865, "high": 880, "low": 850, "close": 870 }
+    ],
+    "quarterly": {
+      "headers": ["Jun 2022", "Sep 2022", "Dec 2022", "Mar 2023", "Jun 2023"],
+      "sales": [12000, 12300, 12500, 12700, 12600],
+      "expenses": [9000, 9200, 9400, 9600, 9500],
+      "netProfit": [2000, 2100, 2150, 2200, 2180],
+      "EPS": [5.5, 5.7, 5.8, 6.0, 6.0],
+      "OPMPercent": [25, 25, 25, 26, 26]
+    },
+    "yearlyPL": {
+      "years": ["Mar 2020", "Mar 2021", "Mar 2022", "Mar 2023", "Mar 2024"],
+      "sales": [48000, 49000, 50000, 51000, 52000],
+      "expenses": [36500, 37000, 37500, 38000, 38500],
+      "netProfit": [6500, 6700, 6800, 6950, 7000],
+      "OPMPercent": [24, 24, 25, 25, 25]
+    },
+    "shareholding": {
+      "categories": ["Promoters", "FIIs", "DIIs", "Government", "Public"],
+      "percentages": [56, 18, 17, 0, 9]
+    }
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "name": "Bajaj Finance Ltd.",
+    "markets": "Part of: BSE Sensex, Nifty 50, BSE Finance",
+    "overview": [
+      { "label": "Market Cap", "value": "₹ 330,000 Cr." },
+      { "label": "Current Price", "value": "₹ 6400" },
+      { "label": "High / Low", "value": "₹ 6700 / 6100" },
+      { "label": "Stock P/E", "value": "45.0" },
+      { "label": "Book Value", "value": "₹ 1100" },
+      { "label": "Dividend Yield", "value": "0.3 %" },
+      { "label": "ROCE", "value": "24 %" },
+      { "label": "ROE", "value": "18 %" },
+      { "label": "Face Value", "value": "₹ 2.00" }
+    ],
+    "pros": [
+      "Strong loan portfolio growth",
+      "Good asset quality"
+    ],
+    "cons": [
+      "High valuation",
+      "Exposure to consumer credit risk"
+    ],
+    "alerts": [
+      "Premium valuation",
+      "Earnings growth strong"
+    ],
+    "periods": ["1M", "6M", "1Yr", "3Yr", "5Yr", "10Yr", "Max"],
+    "priceHistory": [
+      { "date": "2023-01-01", "open": 6200, "high": 6450, "low": 6150, "close": 6400 },
+      { "date": "2023-02-01", "open": 6400, "high": 6600, "low": 6300, "close": 6550 },
+      { "date": "2023-03-01", "open": 6550, "high": 6750, "low": 6450, "close": 6700 },
+      { "date": "2023-04-01", "open": 6700, "high": 6820, "low": 6600, "close": 6750 },
+      { "date": "2023-05-01", "open": 6750, "high": 6900, "low": 6650, "close": 6850 },
+      { "date": "2023-06-01", "open": 6850, "high": 7000, "low": 6750, "close": 6950 },
+      { "date": "2023-07-01", "open": 6950, "high": 7100, "low": 6800, "close": 7000 },
+      { "date": "2023-08-01", "open": 7000, "high": 7200, "low": 6900, "close": 7150 }
+    ],
+    "quarterly": {
+      "headers": ["Jun 2022", "Sep 2022", "Dec 2022", "Mar 2023", "Jun 2023"],
+      "sales": [9000, 9500, 9700, 9900, 9800],
+      "expenses": [4400, 4600, 4700, 4800, 4750],
+      "netProfit": [2600, 2700, 2750, 2800, 2780],
+      "EPS": [15.0, 15.5, 16.0, 16.5, 16.3],
+      "OPMPercent": [35, 36, 36, 36, 36]
+    },
+    "yearlyPL": {
+      "years": ["Mar 2020", "Mar 2021", "Mar 2022", "Mar 2023", "Mar 2024"],
+      "sales": [37000, 39000, 41000, 42000, 43000],
+      "expenses": [18500, 19500, 20500, 21000, 21500],
+      "netProfit": [11500, 12000, 12500, 12800, 13000],
+      "OPMPercent": [31, 31, 32, 32, 32]
+    },
+    "shareholding": {
+      "categories": ["Promoters", "FIIs", "DIIs", "Government", "Public"],
+      "percentages": [51, 22, 20, 0, 7]
+    }
+  },{
+    "symbol": "LT",
+    "name": "Larsen & Toubro Ltd.",
+    "markets": "Part of: BSE Sensex, Nifty 50, BSE Capital Goods",
+    "overview": [
+      { "label": "Market Cap", "value": "₹ 250,000 Cr." },
+      { "label": "Current Price", "value": "₹ 2,100" },
+      { "label": "High / Low", "value": "₹ 2200 / 1800" },
+      { "label": "Stock P/E", "value": "20.0" },
+      { "label": "Book Value", "value": "₹ 900" },
+      { "label": "Dividend Yield", "value": "1.5 %" },
+      { "label": "ROCE", "value": "20 %" },
+      { "label": "ROE", "value": "15 %" },
+      { "label": "Face Value", "value": "₹ 2.00" }
+    ],
+    "pros": [
+      "Strong order book",
+      "Diversified business portfolio"
+    ],
+    "cons": [
+      "Execution risks in projects",
+      "Capital intensive business"
+    ],
+    "alerts": [
+      "Good dividend yield",
+      "Consistent revenue growth"
+    ],
+    "periods": ["1M", "6M", "1Yr", "3Yr", "5Yr", "10Yr", "Max"],
+    "priceHistory": [
+      { "date": "2023-01-01", "open": 2000, "high": 2050, "low": 1950, "close": 2025 },
+      { "date": "2023-02-01", "open": 2025, "high": 2100, "low": 2000, "close": 2075 },
+      { "date": "2023-03-01", "open": 2075, "high": 2150, "low": 2050, "close": 2130 },
+      { "date": "2023-04-01", "open": 2130, "high": 2200, "low": 2100, "close": 2185 },
+      { "date": "2023-05-01", "open": 2185, "high": 2220, "low": 2150, "close": 2200 },
+      { "date": "2023-06-01", "open": 2200, "high": 2250, "low": 2170, "close": 2230 },
+      { "date": "2023-07-01", "open": 2230, "high": 2280, "low": 2200, "close": 2265 },
+      { "date": "2023-08-01", "open": 2265, "high": 2300, "low": 2240, "close": 2290 }
+    ],
+    "quarterly": {
+      "headers": ["Jun 2022", "Sep 2022", "Dec 2022", "Mar 2023", "Jun 2023"],
+      "sales": [40000, 42000, 43000, 44000, 43500],
+      "expenses": [32000, 34000, 35000, 35500, 35000],
+      "netProfit": [4000, 4200, 4300, 4450, 4400],
+      "EPS": [24.0, 25.0, 26.0, 27.0, 26.5],
+      "OPMPercent": [20, 20, 21, 21, 21]
+    },
+    "yearlyPL": {
+      "years": ["Mar 2020", "Mar 2021", "Mar 2022", "Mar 2023", "Mar 2024"],
+      "sales": [160000, 170000, 175000, 180000, 185000],
+      "expenses": [130000, 135000, 138000, 140000, 142000],
+      "netProfit": [17000, 18000, 18500, 19000, 19200],
+      "OPMPercent": [21, 21, 21, 21, 21]
+    },
+    "shareholding": {
+      "categories": ["Promoters", "FIIs", "DIIs", "Government", "Public"],
+      "percentages": [29, 31, 20, 1, 19]
+    }
+  },
+  {
+    "symbol": "BHARTIARTL",
+    "name": "Bharti Airtel Ltd.",
+    "markets": "Part of: BSE Sensex, Nifty 50, BSE Telecom",
+    "overview": [
+      { "label": "Market Cap", "value": "₹ 450,000 Cr." },
+      { "label": "Current Price", "value": "₹ 780" },
+      { "label": "High / Low", "value": "₹ 820 / 700" },
+      { "label": "Stock P/E", "value": "30.0" },
+      { "label": "Book Value", "value": "₹ 120" },
+      { "label": "Dividend Yield", "value": "0.5 %" },
+      { "label": "ROCE", "value": "18 %" },
+      { "label": "ROE", "value": "12 %" },
+      { "label": "Face Value", "value": "₹ 5.00" }
+    ],
+    "pros": [
+      "Strong subscriber base",
+      "Growing data revenue"
+    ],
+    "cons": [
+      "High debt levels",
+      "Regulatory challenges"
+    ],
+    "alerts": [
+      "Improving ARPU",
+      "Debt reduction focus"
+    ],
+    "periods": ["1M", "6M", "1Yr", "3Yr", "5Yr", "10Yr", "Max"],
+    "priceHistory": [
+      { "date": "2023-01-01", "open": 740, "high": 770, "low": 720, "close": 760 },
+      { "date": "2023-02-01", "open": 760, "high": 790, "low": 750, "close": 780 },
+      { "date": "2023-03-01", "open": 780, "high": 800, "low": 760, "close": 790 },
+      { "date": "2023-04-01", "open": 790, "high": 810, "low": 780, "close": 800 },
+      { "date": "2023-05-01", "open": 800, "high": 820, "low": 790, "close": 815 },
+      { "date": "2023-06-01", "open": 815, "high": 830, "low": 800, "close": 825 },
+      { "date": "2023-07-01", "open": 825, "high": 840, "low": 810, "close": 835 },
+      { "date": "2023-08-01", "open": 835, "high": 850, "low": 820, "close": 845 }
+    ],
+    "quarterly": {
+      "headers": ["Jun 2022", "Sep 2022", "Dec 2022", "Mar 2023", "Jun 2023"],
+      "sales": [36000, 37000, 38000, 39000, 38500],
+      "expenses": [29000, 30000, 31000, 32000, 31500],
+      "netProfit": [2800, 2900, 3000, 3100, 3050],
+      "EPS": [8.5, 8.7, 9.0, 9.2, 9.1],
+      "OPMPercent": [20, 20, 21, 21, 21]
+    },
+    "yearlyPL": {
+      "years": ["Mar 2020", "Mar 2021", "Mar 2022", "Mar 2023", "Mar 2024"],
+      "sales": [135000, 140000, 145000, 150000, 155000],
+      "expenses": [110000, 115000, 117000, 120000, 122000],
+      "netProfit": [11000, 11500, 12000, 12500, 12800],
+      "OPMPercent": [19, 19, 20, 20, 21]
+    },
+    "shareholding": {
+      "categories": ["Promoters", "FIIs", "DIIs", "Government", "Public"],
+      "percentages": [36, 27, 22, 1, 14]
     }
   }
+  ]
 
 
-]

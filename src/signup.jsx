@@ -28,25 +28,27 @@ const Signup = () => {
   };
 
   return (
-    <div className="login-body">
-      <div className="container">
-        <h2>User Signup</h2>
-        <input
-          type="text"
-          placeholder="Choose Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Choose Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button onClick={handleSignup}>Sign Up</button>
-        <p>
-          Already have an account? <Link to="/">Login here</Link>
-        </p>
+    <div className="signup-page">
+      <div className="signup-body">
+        <div className="container">
+          <h2>User Signup</h2>
+          <input
+            type="text"
+            placeholder="Choose Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Choose Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button onClick={handleSignup}>Sign Up</button>
+          <p>
+            Already have an account? <Link to="/">Login here</Link>
+          </p>
+        </div>
       </div>
     </div>
   );
