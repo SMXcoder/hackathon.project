@@ -5,7 +5,7 @@ function Foot(){
   <footer>
     <div class="footer-content">
       <div class="footer-section">
-        <h3>StockTracker</h3>
+        <h3>Market Pulse</h3>
         <p>Real-time insights, built for investors and analysts. Built at Hackathon 2025.</p>
       </div>
       <div class="footer-section">
@@ -23,7 +23,7 @@ function Foot(){
       <div class="footer-section">    
         <h3>Follow Us</h3>
         <div class="socials">
-          <a href="https://github.com/SMXcoder/hackathon.project">🌐</a>
+          <a href="https://economictimes.indiatimes.com/markets/stocks?from=mdr">🌐</a>
           <a href="#">🐦</a>
           <a href="https://github.com/SMXcoder/hackathon.project" target="_blank" rel="noopener noreferrer"> <img 
     src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 

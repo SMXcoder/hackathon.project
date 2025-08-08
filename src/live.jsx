@@ -164,7 +164,7 @@ function Live() {
                         backgroundColor: 'rgba(0,30,40,0.95)',
                         titleColor: '#00c8ff',
                         bodyColor: '#e0f7ff',
-                        borderColor: '#00c8ff',
+                        borderColor: '#024b5fff',
                         borderWidth: 1,
                         callbacks: {
                           title: (context) => `Date: ${context[0].label}`,
@@ -174,11 +174,11 @@ function Live() {
                     },
                     scales: {
                       x: {
-                        ticks: { color: '#e0f7ff' }, // bright readable date color
+                        ticks: { color: '#046a8bff' }, // bright readable date color
                         grid: { color: 'rgba(0, 200, 255, 0.1)' },
                       },
                       y: {
-                        ticks: { color: '#e0f7ff' },
+                        ticks: { color: '#046a8bff' },
                         grid: { color: 'rgba(0, 200, 255, 0.1)' },
                       },
                     },

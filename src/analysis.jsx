@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
 
 import NNav from './newnav.jsx';
-
-import Foot from './footer.jsx';// adjust the path as necessary
+import Foot from './footer.jsx'; // adjust the path as necessary
 import "./analysis.css"; 
 
 // Helper to convert priceHistory with OHLC to ApexCharts candlestick format
@@ -49,23 +48,18 @@ const chartOptionsBase = {
       fontSize: '13px',
       fontWeight: 600,
       fontFamily: 'Segoe UI, sans-serif',
-      colors: ['#ffffff'] // Force light text
+      colors: ['#ffffff']
     },
     fillSeriesColor: false,
     onDatasetHover: {
       highlightDataSeries: true
     },
-    marker: {
-      show: false
-    },
-    fixed: {
-      enabled: false
-    },
-    background: '#1f2d3d', // Solid dark background
+    marker: { show: false },
+    fixed: { enabled: false },
+    background: '#1f2d3d',
   },
   theme: { mode: "dark" }
 };
-
 
 // Color helper for percentages
 const percentColor = (val) => (val >= 0 ? "#30e9b7" : "#f45a6a");
@@ -105,7 +99,6 @@ function Table({ title, headers, rows, isPercentage }) {
     </section>
   );
 }
-
 
 export default function MarketPulse() {
   const [stocks, setStocks] = useState([]);
@@ -174,40 +167,41 @@ export default function MarketPulse() {
 
   return (
     <>
-      {/* Navbar at the top */}
+      {/* Navbar */}
       <NNav />
 
-      <div className="market-pulse-wrapper">
-        {/* REMOVE the old nav you had here */}
+      {/* Hero Banner */}
+      <div className="analytics-hero">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ0hBMgYK4Xo-om3KR3Kx65xHqiQ_K7wKYCg&s"
+          alt="Stock Analytics Dashboard"
+          className="analytics-banner-img"
+        />
+        <div className="analytics-banner-text">
+          <h1>Market Pulse</h1>
+          <p>Real-Time Stock Updates & Financial Insights</p>
+        </div>
+      </div>
 
+      <div className="market-pulse-wrapper">
         <div className="background-overlay" />
 
+        {/* Search Bar */}
         <form className="search-bar" onSubmit={handleSubmit} autoComplete="off">
           <input
             type="text"
             placeholder="Search stocks e.g. TCS, INFY"
             value={search}
             onChange={handleInput}
-            aria-autocomplete="list"
-            aria-controls="stock-list"
-            spellCheck="false"
           />
-          <button type="submit" aria-label="Search" style={{ display: "none" }} />
+          <button type="submit" style={{ display: "none" }} />
           {suggestions.length > 0 && (
-            <div className="suggestions" id="stock-list" role="listbox">
+            <div className="suggestions">
               {suggestions.map((s) => (
                 <div
                   key={s.symbol}
-                  role="option"
-                  tabIndex={0}
                   className="suggestion"
                   onClick={() => selectStock(s.symbol)}
-                  onKeyDown={(e) => {
-                    if (["Enter", " "].includes(e.key)) {
-                      e.preventDefault();
-                      selectStock(s.symbol);
-                    }
-                  }}
                 >
                   {s.symbol} - {s.name}
                 </div>
@@ -216,16 +210,27 @@ export default function MarketPulse() {
           )}
         </form>
 
-        <main className="container" role="main" tabIndex={-1}>
-          <h1>Market Pulse - Stock Analysis</h1>
-
+        <main className="container">
           {selectedStock ? (
             <>
-              <article className="card overview-card" aria-label="Stock Overview and Details">
+              <article className="card overview-card">
+                {/* Stock Overview Image */}
+                <img
+                  src="https://images.unsplash.com/photo-1559526324-593bc073d938"
+                  alt={`${selectedStock.name} performance`}
+                  style={{
+                    width: "100%",
+                    maxHeight: "200px",
+                    objectFit: "cover",
+                    borderRadius: "8px",
+                    marginBottom: "15px"
+                  }}
+                />
+
                 <h2>{selectedStock.name}</h2>
                 <p className="markets">{selectedStock.markets}</p>
 
-                <div className="overview-grid" aria-label="Key stock overview metrics">
+                <div className="overview-grid">
                   {selectedStock.overview.map(({ label, value }, i) => (
                     <div key={i} className="overview-metric">
                       <span className="overview-label">{label}</span>
@@ -234,16 +239,7 @@ export default function MarketPulse() {
                   ))}
                 </div>
 
-                <span
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => alert("Ratio editor coming soon!")}
-                  className="add-ratio"
-                >
-                  + Add ratio to table
-                </span>
-
-                <section className="pros-cons-row" aria-label="Pros and Cons">
+                <section className="pros-cons-row">
                   <div className="pros-list">
                     <h3>Pros</h3>
                     <ul>
@@ -262,18 +258,18 @@ export default function MarketPulse() {
                   </div>
                 </section>
 
-                <div className="alert-badge" aria-live="polite" aria-atomic="true">
+                <div className="alert-badge">
                   ⚡ {selectedStock.alerts.join(" | ")}
                 </div>
 
-                <div className="period-btns" aria-label="Selectable periods (not functional)">
+                <div className="period-btns">
                   {selectedStock.periods.map((period) => (
                     <button key={period} className="period-btn" disabled>{period}</button>
                   ))}
                 </div>
               </article>
 
-              <section className="chart-section" aria-label={`Price candlestick chart of ${selectedStock.symbol}`}>
+              <section className="chart-section">
                 <Chart
                   options={{
                     ...chartOptionsBase,
@@ -312,40 +308,16 @@ export default function MarketPulse() {
                 ]}
                 isPercentage
               />
-
-              <section aria-label="Shareholding Pattern">
-                <h3 className="shareholding-heading">Shareholding Pattern (Latest)</h3>
-                <div className="shareholding-table-wrap">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Category</th>
-                        <th>% Holding</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {selectedStock.shareholding.categories.map((cat, i) => (
-                        <tr key={i}>
-                          <td>{cat}</td>
-                          <td style={{ textAlign: "right" }}>
-                            {selectedStock.shareholding.percentages[i]}%
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </section>
             </>
           ) : (
-            <p className="empty-message" aria-live="polite">
+            <p className="empty-message">
               Search a stock (e.g., TCS) to view detailed financial analysis.
             </p>
           )}
         </main>
       </div>
 
-      {/* Footer at the bottom */}
+      {/* Footer */}
       <Foot />
     </>
   );

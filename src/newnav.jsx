@@ -4,11 +4,14 @@ import { useNavigate } from 'react-router-dom';
 function NNav() {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('loggedIn') === 'true');
+  const [username, setUsername] = useState(localStorage.getItem('username') || '');
 
   useEffect(() => {
     const interval = setInterval(() => {
       const storedStatus = localStorage.getItem('loggedIn') === 'true';
+      const storedUsername = localStorage.getItem('username') || '';
       setIsLoggedIn(storedStatus);
+      setUsername(storedUsername);
     }, 500);
 
     return () => clearInterval(interval);
@@ -18,6 +21,7 @@ function NNav() {
     localStorage.removeItem('loggedIn');
     localStorage.removeItem('username');
     setIsLoggedIn(false);
+    setUsername('');
     navigate('/login');
   };
 
@@ -40,8 +44,12 @@ function NNav() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="logo" style={{ cursor: 'pointer' }} onClick={handleHomeClick}>
-          StockTracker
+        <div
+          className="logo"
+          style={{ cursor: 'pointer' }}
+          onClick={handleHomeClick}
+        >
+          Market Pulse
         </div>
 
         <div className="nav-links">
@@ -59,7 +67,10 @@ function NNav() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           {isLoggedIn ? (
             <>
-              <div className="profile-circle">S</div>
+              <div className="profile-circle">
+                {username ? username.charAt(0).toUpperCase() : '?'}
+              </div>
+              <span>{username}</span>
               <button className="auth-button" onClick={handleLogout}>
                 Logout
               </button>

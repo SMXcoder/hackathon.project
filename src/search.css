@@ -1,0 +1,108 @@
+/* Body styling 
+.login-body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000000dd;
+  backdrop-filter: brightness(0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: hidden; 
+}*/
+
+.container {
+  width: 95%;
+  max-width: 5000px;  /* Increased from 900px */
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1.5px solid rgba(20, 255, 232, 0.25);
+  backdrop-filter: blur(20rem) saturate(120%);
+  -webkit-backdrop-filter: blur(40px) saturate(120%);
+  border-radius: 1.2rem;
+  box-shadow: 0 0 25px rgba(20, 255, 232, 0.15);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+/* Input field */
+input[type='text'] {
+  width: 400px;
+  max-width: 90%;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  border: 1.5px solid #138c82;
+  background: #0c1a1a;
+  color: #b9fff8;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  outline: none;
+  margin-bottom: 1rem;
+}
+
+input[type='text']:focus {
+  border-color: #14ffe8;
+  box-shadow: 0 0 12px #14ffe8a3;
+  background: #052222;
+}
+
+/* Error message */
+.error {
+  color: #ff4d4d;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+/* Stock info */
+.stock-result h3,
+.stock-result p {
+  color: #14ffe8;
+  font-weight: 600;
+  margin: 0.3rem 0;
+}
+
+.stock-metrics {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.metrics-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.metrics-grid p {
+  margin: 0;
+  flex: 1 1 200px;
+}
+
+
+.full-width-chart {
+  width: 100%;
+  height: 450px;  /* or increase to 500px */
+  background: #021010;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px #0fffc28a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.full-width-chart canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+

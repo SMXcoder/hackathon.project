@@ -1,4 +1,37 @@
 /* === WRAPPER BASE STYLES === */
+
+.analytics-hero {
+  position: relative;
+  height: 280px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.analytics-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.analytics-banner-text {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  color: white;
+}
+
+.analytics-banner-text h1 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.analytics-banner-text p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+
 .market-pulse-wrapper {
   width: 100vw;
   max-width: 100vw;

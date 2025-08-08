@@ -10,7 +10,7 @@ function Nav() {
  
   <header>
     <nav className="navbar">
-      <div className="logo">StockTracker</div>
+      <div className="logo">Market Pulse</div>
       <div className="nav-links">
         <a href="#">Home</a>
         <a href="#">Live Stocks</a>

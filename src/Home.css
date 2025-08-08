@@ -134,3 +134,85 @@
   color: #f85149;
   cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+        .top-performers-section {
+          margin-top: 30px;
+        }
+        .top-performers-section h2 {
+          color: #2ea043;
+          margin-bottom: 8px;
+        }
+        .top-performers-section ul {
+          list-style: none;
+          padding-left: 0;
+          margin-bottom: 20px;
+        }
+        .top-performers-section li {
+          display: flex;
+          justify-content: space-between;
+          padding: 4px 0;
+          font-weight: 600;
+          font-size: 14px;
+        }
+        .market-news-section {
+          margin-top: 40px;
+          background: #161b22;
+          border-radius: 12px;
+          padding: 20px;
+          max-height: 350px;
+          overflow-y: auto;
+        }
+        .market-news-section h2 {
+          color: #2ea043;
+          margin-bottom: 12px;
+        }
+        .news-categories button {
+          margin-right: 12px;
+          padding: 6px 14px;
+          border-radius: 14px;
+          border: 2px solid #238636;
+          background: transparent;
+          color: #8b949e;
+          font-weight: 600;
+          cursor: pointer;
+          user-select: none;
+        }
+        .news-categories button.active {
+          background-color: #238636;
+          color: #c9d1d9;
+        }
+        .news-list {
+          list-style: none;
+          padding-left: 0;
+          margin-top: 16px;
+        }
+        .news-list li {
+          margin-bottom: 12px;
+        }
+        .news-list a {
+          color: #2ea043;
+          font-weight: 600;
+          text-decoration: none;
+        }
+        .news-list a:hover {
+          text-decoration: underline;
+        }
+        .news-list span {
+          margin-left: 8px;
+          font-size: 12px;
+          color: #8b949e;
+        }
+      
+
+        .analytics-hero {
+  position: relative;
+  /* existing styles */
+}

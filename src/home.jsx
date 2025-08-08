@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { Sparklines, SparklinesLine } from "react-sparklines";
 import NNav from "./newnav.jsx";
 import Foot from "./footer.jsx";
 import "./Home.css";
 
-// ------- Dummy data (replace with API calls later) -------
 const liveIndices = [
   { name: "Nifty 50", value: 17684.25, change: 0.53 },
   { name: "Sensex", value: 59730.12, change: -0.23 },
@@ -44,7 +43,7 @@ const trendingStocksData = [
   },
 ];
 
-const watchlistData = [
+const initialWatchlist = [
   {
     symbol: "INFY",
     name: "Infosys",
@@ -57,14 +56,14 @@ const watchlistData = [
   },
 ];
 
-// ---------------------------------------------------------
-
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [watchlist, setWatchlist] = useState(watchlistData);
-  const loggedIn = true;
+  const [watchlist, setWatchlist] = useState(initialWatchlist);
+  const [loggedIn, setLoggedIn] = useState(false);
+
   const marketStatus = { open: true, timing: "9:15 AM - 3:30 PM IST" };
 
+  // Filter stock suggestions based on search term
   const stockSuggestions = useMemo(() => {
     if (!searchTerm.trim()) return [];
     const searchL = searchTerm.toLowerCase();
@@ -92,16 +91,58 @@ export default function Home() {
       return;
     }
     alert(`Searching for "${searchTerm.trim()}" (mock search)`);
+
     setSearchTerm("");
   }
 
-  // ---------------- RENDER ----------------
+  function toggleLogin() {
+    setLoggedIn((prev) => !prev);
+  }
+
   return (
     <>
       <NNav />
 
+      {/* Hero Banner with header image */}
+      <div className="analytics-hero">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ0hBMgYK4Xo-om3KR3Kx65xHqiQ_K7wKYCg&s"
+          alt="Stock Analytics Dashboard"
+          className="analytics-banner-img"
+        />
+        <div className="analytics-banner-text">
+          <h1>Market Pulse</h1>
+          <p>Real-Time Stock Updates & Financial Insights</p>
+        </div>
+        {/* Login/Logout button on banner right */}
+
+      </div>
+
+      {/* Search Section below banner */}
+      <section className="search-section">
+        <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Search stocks by name, ticker or sector..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && handleSearchSubmit()}
+          />
+          <button onClick={handleSearchSubmit}>Search</button>
+        </div>
+        {stockSuggestions.length > 0 && (
+          <ul className="suggestions">
+            {stockSuggestions.map((s) => (
+              <li key={s.symbol}>
+                {s.symbol} - {s.name}
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
       <div className="home-page-wrapper">
-        {/* Hero / Indices Section */}
+        {/* Hero / Live Indices Section */}
         <section className="hero-section">
           <div className="indices-box">
             <h2>Live Indices</h2>
@@ -127,76 +168,53 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Search Section */}
-        <section className="search-section">
-          <div className="search-bar">
-            <input
-              type="text"
-              placeholder="Search stocks by name, ticker or sector..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleSearchSubmit()}
-            />
-            <button onClick={handleSearchSubmit}>Search</button>
-          </div>
-          {stockSuggestions.length > 0 && (
-            <ul className="suggestions">
-              {stockSuggestions.map((s) => (
-                <li key={s.symbol}>
-                  {s.symbol} - {s.name}
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
-
         {/* Trending Stocks */}
         <section className="trending-section">
           <h2>Trending Stocks</h2>
           <div className="trending-grid">
-            {trendingStocksData.map((stock) => (
-              <div className="stock-card" key={stock.symbol}>
-                <div className="card-header">
-                  <strong>
-                    {stock.name} <em>({stock.symbol})</em>
-                  </strong>
-                  <button
-                    onClick={() => addToWatchlist(stock)}
-                    disabled={watchlist.some((ws) => ws.symbol === stock.symbol)}
-                  >
-                    {watchlist.some((ws) => ws.symbol === stock.symbol)
-                      ? "Added"
-                      : "Add"}
-                  </button>
+            {trendingStocksData.map((stock) => {
+              const inWatchlist = watchlist.some((ws) => ws.symbol === stock.symbol);
+              return (
+                <div className="stock-card" key={stock.symbol}>
+                  <div className="card-header">
+                    <strong>
+                      {stock.name} <em>({stock.symbol})</em>
+                    </strong>
+                    <button
+                      onClick={() => addToWatchlist(stock)}
+                      disabled={inWatchlist}
+                    >
+                      {inWatchlist ? "Added" : "Add"}
+                    </button>
+                  </div>
+                  <div className="price-line">
+                    <strong>${stock.price.toFixed(2)}</strong>
+                    <span className={stock.changePercent >= 0 ? "green" : "red"}>
+                      {stock.changePercent >= 0 ? "+" : ""}
+                      {stock.changePercent.toFixed(2)}%
+                    </span>
+                  </div>
+                  <div className="metrics">
+                    <div>Vol: {stock.volume.toLocaleString()}</div>
+                    <div>H: ${stock.dayHigh}</div>
+                    <div>L: ${stock.dayLow}</div>
+                  </div>
+                  <Sparklines data={stock.sparkline} svgWidth={100} svgHeight={35}>
+                    <SparklinesLine
+                      style={{
+                        strokeWidth: 2,
+                        stroke: stock.changePercent >= 0 ? "#2ea043" : "#f85149",
+                        fill: "none",
+                      }}
+                    />
+                  </Sparklines>
                 </div>
-                <div className="price-line">
-                  <strong>${stock.price.toFixed(2)}</strong>
-                  <span className={stock.changePercent >= 0 ? "green" : "red"}>
-                    {stock.changePercent >= 0 ? "+" : ""}
-                    {stock.changePercent.toFixed(2)}%
-                  </span>
-                </div>
-                <div className="metrics">
-                  <div>Vol: {stock.volume.toLocaleString()}</div>
-                  <div>H: ${stock.dayHigh}</div>
-                  <div>L: ${stock.dayLow}</div>
-                </div>
-                <Sparklines data={stock.sparkline} svgWidth={100} svgHeight={35}>
-                  <SparklinesLine
-                    style={{
-                      strokeWidth: 2,
-                      stroke:
-                        stock.changePercent >= 0 ? "#2ea043" : "#f85149",
-                      fill: "none",
-                    }}
-                  />
-                </Sparklines>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
-        {/* Watchlist */}
+        {/* Watchlist visible only when logged in */}
         {loggedIn && (
           <section className="watchlist-section">
             <h2>Your Watchlist</h2>
@@ -213,9 +231,7 @@ export default function Home() {
                       {stock.changePercent >= 0 ? "+" : ""}
                       {stock.changePercent.toFixed(2)}%
                     </span>
-                    <button onClick={() => removeFromWatchlist(stock.symbol)}>
-                      ✕
-                    </button>
+                    <button onClick={() => removeFromWatchlist(stock.symbol)}>✕</button>
                   </li>
                 ))}
               </ul>
